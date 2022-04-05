@@ -1,0 +1,221 @@
+html {
+  background: #ddd;  
+  height: 100%;
+  display: flex;
+}
+body {
+  width: 100%;
+  margin: auto;
+}
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.container {
+  max-height: 90%;
+  margin-top: 20px;
+}
+
+.todo-list {
+  background: #fff;
+  font-size: 15px;
+  max-width: 600px;
+  margin: auto;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  padding: 8px 16px;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+  text-align: left;
+}
+
+
+/** BUTTONS*/
+$colorPink: #e95678;
+$colorPinkHover:#c23455;
+
+$colorBlue: #25b0bc;
+$colorBlueHover:#166b72;
+
+@mixin button($class, $color, $colorHover) {
+  .button.#{$class}{background: $color;}
+  .button.#{$class}:hover {background: $colorHover;}
+  .button.#{$class}:active{background: $color;}  
+}
+
+ .button {
+  outline: none;
+  padding: 8px;
+  font-size: 15px;
+  border: 0px solid;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer; 
+}
+.button[disabled]{
+  opacity: 0.3;
+}
+
+@include button('pink', $colorPink, $colorPinkHover);
+@include button('blue', $colorBlue, $colorBlueHover);
+
+
+
+/** TODO*/
+.file-input{
+  padding: 2px;
+  background: #f8f8f8;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.text-desc{
+  width: 100%;
+  height: 60px;
+  margin: 15px 0px;
+  border-radius: 5px;
+  border: 1px solid #b9b9b9;
+  padding: 10px 10px;
+  transition-duration: 300ms;
+}
+.text-desc:hover{
+  border: 1px solid #333;
+  box-shadow: 0px 0px 3px 1px #00000024;
+}
+
+.file-input > .text {
+  outline: none;
+  padding: 1px 5px;
+  font-size: 15px;
+  width: 50%;
+  height: 46px;
+  background:transparent;
+  border: 1px solid #b9b9b9;
+  border-radius: 5px;
+  transition-duration: 300ms;
+}
+.file-input > .text:hover {
+  border: 1px solid #333;
+  box-shadow: 0px 0px 3px 1px #00000024;
+}
+
+.file-input > .select {
+  outline: none;
+  padding: 0px 10px;
+  font-size: 15px;
+  width: 20%;
+  height: 46px;
+  background:transparent;
+  border: 1px solid #b9b9b9;
+  border-radius: 5px;
+  cursor: pointer;
+  transition-duration: 300ms;
+}
+.file-input > .select:hover {
+  border: 1px solid #333;
+  box-shadow: 0px 0px 3px 1px #00000024;
+}
+
+
+.titulo{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+.filtros{
+padding: 20px 0px;
+display: flex;
+}
+
+.prioridad{
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+}
+
+/** ITEM*/
+
+.todo {
+  display: block;
+  position: relative;
+  padding: 1em 0.5em 1em 0.5em;
+  margin: 5px auto;
+  cursor: pointer; 
+  border: solid 2px #CCC; 
+  border-radius: 15px;
+}
+
+.todo__state {
+  outline: none;
+  padding: 0px 10px;
+  font-size: 15px;
+  // width: 30%;
+  height: 36px;
+  background: transparent;
+  border: 1px solid #b9b9b9;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 300ms;
+}
+.todo__state:hover {
+  border: 1px solid #333;
+  box-shadow: 0px 0px 3px 1px #00000024;
+}
+
+.todo__text {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+  color: black;
+  text-align: left;
+}
+
+.todo__title {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+  color: black;
+  text-align: left;
+  font-weight: bold;
+}
+
+.todo__desc {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+  color: black;
+  text-align: left;
+}
+
+.todo__left {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+  color: black;
+  text-align: left;
+}
+
+.todo__comp {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.checkbox {
+  width: 30px;
+  height: 30px;
+  cursor: pointer; 
+}
+
+.btn-crear{
+  text-align: center;
+}
+
+
